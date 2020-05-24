@@ -2,7 +2,6 @@
 function submitForm() {
     const loader = document.getElementById('loader')
     
-    const form  = document.getElementsByTagName('form')[0];
     const email = document.getElementById('email');
     const error = document.getElementById('error');
     const success = document.getElementById('success');
@@ -18,14 +17,14 @@ function submitForm() {
             'Content-Type': 'application/json; charset=UTF-8'
         }
     };
-    
+    // place to hard code response status
     const data = {
         phoneNumber: phoneNumber ? phoneNumber.value : null,
         email: email ? email.value : null,
         title: 'phone&emailVeryfication',
         body: 'bar',
-        // status: 'SUCCESS',
-        status: 'ERROR',
+        status: 'SUCCESS',
+        // status: 'ERROR',
         userId: 1
     }
 
@@ -35,28 +34,31 @@ function submitForm() {
     }
     let response
     
-    if(phoneNumber && phoneNumber.value.match(phoneNoRegEx)) {
-        loader.className= 'loader'
-        phoneNumberError.innerHTML = ''; // Reset the content of the message
-        phoneNumberError.className = 'error__phone_number'; // Reset the visual state of the message
-        response =handleApiFetchPOST(APIEndPoint, request)
+    if(phoneNumber) {
+        if(phoneNumber.value.match(phoneNoRegEx)) {
+            loader.className= 'loader'
+            phoneNumberError.innerHTML = ''; // Reset the content of the message
+            phoneNumberError.className = 'error__phone_number'; // Reset the visual state of the message
+            response =handleApiFetchPOST(APIEndPoint, request)
+        }
+        else {
+            showError();
+        }
     }
-    else {
-        showError();
-    }
-    
-    if (email && email.validity.valid) {
-        loader.className= 'loader'
-        // In case there is an error message visible, if the field
-        // is valid, we remove the error message.
-        emailError.innerHTML = ''; // Reset the content of the message
-        emailError.className = 'error__email'; // Reset the visual state of the message
-        //send request to mocked API
-        
-        response =handleApiFetchPOST(APIEndPoint, request)
-    } else {
-        // If there is still an error, show the correct error
-        showError();
+    if(email) {
+        if (email.validity.valid) {
+            loader.className= 'loader'
+            // In case there is an error message visible, if the field
+            // is valid, we remove the error message.
+            emailError.innerHTML = ''; // Reset the content of the message
+            emailError.className = 'error__email'; // Reset the visual state of the message
+            //send request to mocked API
+            
+            response =handleApiFetchPOST(APIEndPoint, request)
+        } else {
+            // If there is still an error, show the correct error
+            showError();
+        }
     }
     
     
