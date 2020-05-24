@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="menu">
+            <ul class="menu__row">
+                <li class="menu__list"><a class="menu__link" href="index.html">Home</a>
+                <li class="menu__list"><a class="menu__link">Register</a>
+                    <ul class="menu__dropdown">
+                        <li class="menu__dropdown__list"><a class="menu__dropdown__link"
+                                href="phone_number_reg.html">Register with phone number</a></li>
+                        <li class="menu__dropdown__list"><a class="menu__dropdown__link" href="email_reg.html">Register
+                                with e-mail</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="block__middle block__middle__border">
+            <div id="loader" class="loader loader__hidden"></div>
+            <div class="block__form">
+                <form>
+                    <fieldset>
+                        <div class="block__form__field">
+                            <label class="float__left" for="phoneNumber" placeholder="+3817878777">Phone
+                                number</label><br>
+                            <input class="input__field" type="tel" placeholder="+381698989898" id="phoneNumber" />
+                            <span class="error__phone_number" aria-live="polite"></span>
+                        </div>
+                        </br>
+                        <div class="float__left block__form__field">
+                            <input type="radio" id="eur" name="eur" value="eur" checked>
+                            <label for="eur">EUR</label>
+                            <input type="radio" id="rsd" name="rsd" value="rsd">
+                            <label for="rsd">RSD</label>
+                            <input type="radio" id="chf" name="chf" value="chf">
+                            <label for="chf">CHF</label>
+                        </div>
+                        </br>
+                        </br>
+                        <div class="block__form__field">
+                            <input class="" type="checkbox" id="terms_and_conditions" name="terms_and_conditions">
+                            <label class="" for="terms_and_conditions">I accept terms and conditions</label>
+                        </div>
+                        <div class="block__form__field">
+                            <input class="" type="checkbox" id="notifications" name="notifications">
+                            <label class="" for="notifications">I want to receive promo notifications</label>
+                        </div>
+                        </br>
+                        <span id="error" class="error" aria-live="polite"></span>
+                        <span id="success" class="success" aria-live="polite"></span>
+                    </fieldset>
+                </form>
+                <button class="btn__submit" onclick="submitForm()">Submit</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+
+body {
+    font-family: Verdana, Geneva, sans-serif;
+}
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+.error__phone_number, .error__email, .error {
+    color: rgb(204, 8, 8);
+    width: 116%;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+    float: left;
+
+}
+
+.success {
+    color: rgb(33, 199, 47);
+    width: 116%;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+    float: left;
+}
+
+fieldset {
+    border: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+.btn__submit {
+    width: 7rem;
+    height: 2.5rem;
+    font-size: 1.3rem;
+    background-color: #4b809e;
+    color: #fff;
+    border: none;
+    margin-top: 2em;
+}
+.block__form {
+    width: 27rem;
+    height: 100%;
+    margin: 0 auto;
+}
+.input__field {
+    width: 100%;
+    height: 2.5rem;
+    font-size: 1.4rem;
+}
+.float__left {
+    float: left;
+}
+.block__form__field {
+    text-align: left;
+}
+
+.block__middle__border {
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 1px 1px 1px #ddd;
+}
+/* Main navigation */
+.menu {
+    background: #333;
+}
+
+.menu__row {
+    width: 90%;
+    line-height: 2.5;
+}
+
+.menu__row, .menu__dropdown{
+    list-style: none;
+}
+.menu__list {
+    font-size: 1.5rem;
+    display: inline-block;
+    padding-right: 1em;
+}
+.menu__link {
+    color: #ffffff;
+    font-weight: 500;
+    transition: .3s;
+}
+.menu__dropdown {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    line-height: 3rem;
+    width: 15%;
+    box-shadow: 1rpx 1px 3px #ccc;
+    background-color: #333;
+    padding: 0;
+}
+
+.menu__list:hover .menu__dropdown {
+    display: block;
+    
+}
+
+.menu__dropdown__list {
+    border-bottom: 1px solid #ccc;
+    
+}
+.menu__dropdown__list:hover {
+    background-color: rgb(82, 71, 71);
+}
+
+.menu__dropdown__link {
+    font-size: 1rem;
+    padding: 1rem;
+}
+/* Middle block */
+.block__middle {
+    margin: 10% auto;
+    text-align: center;
+    width: 40%;
+}
+.welcome_paragraph {
+    font-size: 5rem;
+    font-style: bold;
+    border-bottom: 1px solid #ccc;
+}
+/* Loader */
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .loader__hidden {
+      display: none;
+  }
